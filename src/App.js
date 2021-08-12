@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Servicos from './components/Servicos';
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [servicos, setServicos] = useState([
+    {
+      id: '1',
+      title: 'IPTV e P2P',
+    },
+    {
+      id: '2',
+      title: 'Apostas Esportivas',
+    }
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        <Servicos servicos={servicos}/>
+      </div>
+      
+    </>
   );
-}
+};
 
 export default App;
